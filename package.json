@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "pretty-quick --staged && lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "node example.js",
     "example:basic": "node examples/basic.js",
     "example:custom": "node examples/custom-initial.js",
     "example:sequence": "node examples/timed-sequence.js",
