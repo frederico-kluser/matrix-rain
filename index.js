@@ -87,9 +87,14 @@ class Matrix {
       this.life -= 1;
       this.changeLetter(5);
       
-      // Fade effect - reduce intensity as life decreases
+      // Apply fade effect
       if (this.intensity > 0 && this.life % 2 === 0) {
         this.intensity = Math.max(0, this.intensity - 1);
+      }
+      
+      // Remove leading status when character reaches the last row
+      if (this.isLeading && this.row === rows - 1) {
+        this.isLeading = false;
       }
     } else if (!this.row) {
       let allColumnEmpty = true;
