@@ -1,4 +1,4 @@
-let interval;
+// This file exports the matrixRain function
 const { COLOR, CHARACTERS } = {
   COLOR: {
     BLACK: '#020204',
@@ -272,9 +272,12 @@ const togglePause = () => {
     // Show pause message
     const y = Math.floor(rows / 2);
     const message = "[ PAUSED ]";
-    const x = Math.floor((termWidth - message.length) / 2);
+    const x = Math.max(0, Math.floor((termWidth - message.length) / 2));
     
-    process.stdout.write(`\u001B[${y+1};${x+1}H\x1b[33m${message}\x1b[0m`);
+    // Bounds check for message
+    if (x < termWidth) {
+      process.stdout.write(`\u001B[${y+1};${x+1}H\x1b[33m${message}\x1b[0m`);
+    }
   } else {
     // Resume
     matrixState.running = true;
@@ -298,15 +301,21 @@ const executeWhilePaused = (func) => {
 
 // Reveal message in the matrix
 const revealMessage = (message) => {
+  // Ensure message doesn't exceed terminal width
+  const maxLength = Math.min(message.length, termWidth - 4); // Leave 2 chars on each side
+  const displayMessage = message.length > maxLength 
+    ? message.substring(0, maxLength - 3) + '...' 
+    : message;
+  
   // Show the message in the middle of the screen
   const messageRow = Math.floor(rows / 2);
-  const messageStart = Math.floor((termWidth - message.length) / 2);
+  const messageStart = Math.max(0, Math.floor((termWidth - displayMessage.length) / 2));
   
   // Create message map
   const messageMap = {};
-  for (let i = 0; i < message.length; i++) {
+  for (let i = 0; i < displayMessage.length; i++) {
     messageMap[messageStart + i] = {
-      char: message[i],
+      char: displayMessage[i],
       row: messageRow
     };
   }
@@ -332,15 +341,18 @@ const revealMessage = (message) => {
     efficientUpdate();
     
     // Add message overlay
-    for (let i = 0; i < message.length; i++) {
+    for (let i = 0; i < displayMessage.length; i++) {
       const x = messageStart + i;
       
-      // Draw message character in white
-      process.stdout.write(`\u001B[${messageRow+1};${x+1}H\x1b[97m${message[i]}\x1b[0m`);
-      
-      // Update the previous matrix to include this character
-      matrixState.previousMatrix[messageRow][x].letter = message[i];
-      matrixState.previousMatrix[messageRow][x].intensity = 9;
+      // Ensure we don't go beyond terminal width
+      if (x < termWidth) {
+        // Draw message character in white
+        process.stdout.write(`\u001B[${messageRow+1};${x+1}H\x1b[97m${displayMessage[i]}\x1b[0m`);
+        
+        // Update the previous matrix to include this character
+        matrixState.previousMatrix[messageRow][x].letter = displayMessage[i];
+        matrixState.previousMatrix[messageRow][x].intensity = 9;
+      }
     }
   };
   
@@ -418,6 +430,9 @@ const matrixRain = async (initialMessage = "WAKE UP NEO") => {
       if (!message || typeof message !== 'string') {
         return;
       }
+      
+      // Truncate long messages before passing to revealMessage
+      // This is an extra layer of validation in case revealMessage changes
       revealMessage(message);
     },
     

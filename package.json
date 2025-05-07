@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "pretty-quick --staged && lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node example.js",
+    "start": "node examples/basic.js",
     "example:basic": "node examples/basic.js",
     "example:custom": "node examples/custom-initial.js",
     "example:sequence": "node examples/timed-sequence.js",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frederico-kluser/javascript-started-project.git"
+    "url": "git+https://github.com/frederico-kluser/matrix-rain.git"
   },
   "author": "Frederico Guilherme Kluser de Oliveira",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/frederico-kluser/javascript-started-project/issues"
+    "url": "https://github.com/frederico-kluser/matrix-rain/issues"
   },
-  "homepage": "https://github.com/frederico-kluser/javascript-started-project#readme",
+  "homepage": "https://github.com/frederico-kluser/matrix-rain#readme",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^7.8.1",

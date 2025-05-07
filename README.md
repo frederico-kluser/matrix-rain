@@ -22,17 +22,33 @@ npm install
 
 ### Basic Usage
 
+The `matrixRain` function returns a Promise, so it must be used with async/await or Promise chains:
+
 ```javascript
 const matrixRain = require('./index');
 
-// Start with default "WAKE UP NEO" message
-const matrix = await matrixRain();
+// Example with async/await
+async function startMatrix() {
+  // Start with default "WAKE UP NEO" message or custom message
+  const matrix = await matrixRain();  // or await matrixRain("CUSTOM MESSAGE");
 
-// Display a custom message
-matrix.display("THE MATRIX HAS YOU");
+  // Display a custom message
+  matrix.display("THE MATRIX HAS YOU");
 
-// Stop the animation when done
-matrix.stop();
+  // Stop the animation when done
+  matrix.stop();
+}
+
+// Call the async function
+startMatrix();
+
+// Alternative using Promise syntax
+matrixRain().then(matrix => {
+  matrix.display("THE MATRIX HAS YOU");
+  
+  // Later, stop the animation
+  setTimeout(() => matrix.stop(), 5000);
+});
 ```
 
 ### NPM Scripts
@@ -61,13 +77,20 @@ npm run examples
 
 ## Examples
 
-See the `/examples` directory for various demos showing different ways to use the Matrix Rain animation:
+The `/examples` directory contains various demos showing different ways to use the Matrix Rain animation. 
+You can run these examples using the npm scripts listed above.
 
-- `basic.js` - Simple example with default initial message
-- `custom-initial.js` - Custom initial message example
-- `timed-sequence.js` - Timed sequence of messages
-- `interactive.js` - Type messages to display while running
-- `random-quotes.js` - Shows random Matrix movie quotes
+- `examples/basic.js` - Simple example with default initial message
+- `examples/custom-initial.js` - Custom initial message example
+- `examples/timed-sequence.js` - Timed sequence of messages
+- `examples/interactive.js` - Type messages to display while running
+- `examples/random-quotes.js` - Shows random Matrix movie quotes
+
+Each example demonstrates different features of the Matrix Rain animation. To run an example directly:
+
+```bash
+node examples/interactive.js
+```
 
 ## API
 
