@@ -5,7 +5,8 @@ const matrixRain = require('./index');
 
 // Start the matrix animation and get the instance
 async function start() {
-  const matrix = await matrixRain();
+  // Start with custom initial message
+  const matrix = await matrixRain("WELCOME TO THE MATRIX");
   
   // Change displayed message after 5 seconds
   setTimeout(() => {

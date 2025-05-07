@@ -387,7 +387,7 @@ try {
 }
 
 // Matrix rain function that returns an instance and stop function
-const matrixRain = async () => {
+const matrixRain = async (initialMessage = "WAKE UP NEO") => {
   // Show loader
   const loader = matrixLoader();
   await loader.start();
@@ -397,9 +397,9 @@ const matrixRain = async () => {
   
   matrixState.intervalId = setInterval(updateMatrix, 100);
   
-  // Show a welcome message after 1 second
+  // Show the initial message after 1 second
   setTimeout(() => {
-    revealMessage("WAKE UP NEO");
+    revealMessage(initialMessage);
     
     // Add an auto-exit timer for non-interactive environments (20 seconds)
     if (!process.stdin.isTTY) {
