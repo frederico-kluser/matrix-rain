@@ -4,7 +4,7 @@
 
 Terminal-based Matrix digital rain animation that brings the iconic "digital rain" effect from The Matrix films directly to your terminal. Choose the red pill 💊 and see how deep the rabbit hole goes...
 
-*Read this in other languages: [English](docs/README.en.md), [Português](docs/README.pt-br.md), [Español](docs/README.es.md), [Français](docs/README.fr.md), [Deutsch](docs/README.de.md), [中文](docs/README.zh.md), [日本語](docs/README.ja.md), [Русский](docs/README.ru.md), [العربية](docs/README.ar.md), [हिन्दी](docs/README.hi.md)*
+*Read this in other languages: [English](README.en.md), [Português](README.pt-br.md), [Español](README.es.md), [Français](README.fr.md), [Deutsch](README.de.md), [中文](README.zh.md), [日本語](README.ja.md), [Русский](README.ru.md), [العربية](README.ar.md), [हिन्दी](README.hi.md)*
 
 ## ✨ Features
 
