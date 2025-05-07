@@ -35,7 +35,12 @@ const getRandomNumber = (limit = 0) => Math.floor(Math.random() * limit);
 const getRandomCharacter = () => CHARACTERS[getRandomNumber(CHARACTERS.length)];
 
 // Green shade definition with ANSI color codes
-const getGreenShade = (intensity) => {
+const getGreenShade = (intensity, isLeading = false) => {
+  // If it's the leading character, return bright white
+  if (isLeading) {
+    return '\x1b[1;97m'; // Bright white (bold)
+  }
+
   const shades = [
     '\x1b[38;5;22m',  // Muito escuro
     '\x1b[38;5;28m',  // Escuro
@@ -60,6 +65,7 @@ class Matrix {
     this.letter = ' ';
     this.intensity = 0;
     this.color = COLOR.TRANSPARENT;
+    this.isLeading = false; // Tracks if this is the leading character in a column
 
     if (!this.row) {
       this.changeLetter(5);
@@ -87,18 +93,32 @@ class Matrix {
       }
     } else if (!this.row) {
       let allColumnEmpty = true;
+      let leadingCharFound = false;
 
       for (let row = 0; row < rows; row += 1) {
         if (matrixState.matrix[row][this.column].letter !== ' ') {
           allColumnEmpty = false;
+          if (matrixState.matrix[row][this.column].isLeading) {
+            leadingCharFound = true;
+          }
         }
       }
 
+      // Start a new column if it's empty and probability condition is met
       if (allColumnEmpty && getProbability(10)) {
         this.changeLetter(2);
         this.intensity = 9; // Leading character is brightest
+        this.isLeading = true; // Mark as the leading character
       }
     } else if (matrixState.matrix[this.row - 1][this.column].letter !== ' ') {
+      // If the character above is the leading character, this new one inherits the leading status
+      this.isLeading = matrixState.matrix[this.row - 1][this.column].isLeading;
+      
+      // The character above is no longer the leading character as it has moved down
+      if (this.isLeading) {
+        matrixState.matrix[this.row - 1][this.column].isLeading = false;
+      }
+      
       this.changeLetter();
     }
   }
@@ -107,6 +127,7 @@ class Matrix {
     this.life = rows;
     this.letter = ' ';
     this.intensity = 0;
+    this.isLeading = false;
   }
 }
 
@@ -123,7 +144,8 @@ const initializeMatrix = () => {
       matrixState.matrix[row].push(new Matrix(row, column));
       matrixState.previousMatrix[row].push({
         letter: ' ',
-        intensity: 0
+        intensity: 0,
+        isLeading: false
       });
     }
   }
@@ -139,8 +161,10 @@ const efficientUpdate = () => {
       const current = matrixState.matrix[y][x];
       const prev = matrixState.previousMatrix[y][x];
       
-      // Only update changed cells
-      if (current.letter !== prev.letter || current.intensity !== prev.intensity) {
+      // Only update changed cells or those with changed leading status
+      if (current.letter !== prev.letter || 
+          current.intensity !== prev.intensity || 
+          current.isLeading !== prev.isLeading) {
         // Move cursor to position
         process.stdout.write(`\u001B[${y+1};${x+1}H`);
         
@@ -148,13 +172,14 @@ const efficientUpdate = () => {
           // Clear character
           process.stdout.write(' ');
         } else {
-          // Write with color
-          process.stdout.write(`${getGreenShade(current.intensity)}${current.letter}\x1b[0m`);
+          // Write with color, using bright white for leading characters
+          process.stdout.write(`${getGreenShade(current.intensity, current.isLeading)}${current.letter}\x1b[0m`);
         }
         
         // Update previous state
         prev.letter = current.letter;
         prev.intensity = current.intensity;
+        prev.isLeading = current.isLeading;
       }
     }
   }
