@@ -7,7 +7,7 @@ const args = process.argv.slice(2);
 const HELP_MESSAGE = `
 🧠 The Matrix Rain 🌧️ - Terminal-based Matrix digital rain animation
 
-Usage: matrix-rain [options] [message]  # Command stays the same for user experience
+Usage: matrix-rain [options] [message]
 
 Options:
   -h, --help              Display this help message

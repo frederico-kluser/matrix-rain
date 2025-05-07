@@ -21,6 +21,23 @@ Choose your preferred language:
 
 ## Quick Start
 
+### As a Global Command-Line Tool
+
+```bash
+# Install globally
+npm install -g the-matrix-rain
+
+# Run the Matrix rain animation
+matrix-rain
+
+# Run with a custom message
+matrix-rain "FOLLOW THE WHITE RABBIT"
+```
+
+> **Note**: After installing globally, the `matrix-rain` command will be available from any terminal.
+
+### From Source
+
 ```bash
 # Clone the repository
 git clone https://github.com/frederico-kluser/the-matrix-rain.git

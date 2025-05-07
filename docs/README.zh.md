@@ -17,6 +17,45 @@
 
 ## 💾 安装
 
+### 作为全局命令行工具
+
+```bash
+# 全局安装
+npm install -g the-matrix-rain
+
+# 运行 Matrix rain 动画
+matrix-rain
+
+# 使用自定义消息运行
+matrix-rain "FOLLOW THE WHITE RABBIT"
+
+# 显示随机 Matrix 引言
+matrix-rain --random
+
+# 以交互模式运行
+matrix-rain --interactive
+
+# 运行特定时间（以秒为单位）
+matrix-rain --time 30
+
+# 获取帮助和更多选项
+matrix-rain --help
+```
+
+> **注意**：全局安装后，`matrix-rain` 命令将在任何终端中可用。无需手动运行 `node index.js`！
+
+### 作为项目依赖
+
+```bash
+# 添加到你的项目
+npm install the-matrix-rain
+
+# 或者
+yarn add the-matrix-rain
+```
+
+### 从源代码
+
 ```bash
 # 释放你的思想...
 git clone https://github.com/frederico-kluser/the-matrix-rain.git
@@ -25,6 +64,30 @@ npm install
 ```
 
 ## 🕹️ 使用方法
+
+### 命令行选项
+
+全局安装后，您可以使用以下命令行选项：
+
+```bash
+# 使用默认的 "WAKE UP NEO" 消息运行
+matrix-rain
+
+# 使用自定义消息运行
+matrix-rain "FOLLOW THE WHITE RABBIT"
+
+# 运行特定时间（以秒为单位）
+matrix-rain --time 30
+
+# 显示随机 Matrix 引言
+matrix-rain --random
+
+# 交互模式 - 输入要显示的消息
+matrix-rain --interactive
+
+# 显示帮助
+matrix-rain --help
+```
 
 ### 基本用法
 

@@ -17,6 +17,45 @@
 
 ## 💾 インストール
 
+### グローバルコマンドラインツールとして
+
+```bash
+# グローバルにインストール
+npm install -g the-matrix-rain
+
+# Matrix rainアニメーションを実行
+matrix-rain
+
+# カスタムメッセージで実行
+matrix-rain "FOLLOW THE WHITE RABBIT"
+
+# ランダムなマトリックスの引用を表示
+matrix-rain --random
+
+# インタラクティブモードで実行
+matrix-rain --interactive
+
+# 特定の時間実行（秒単位）
+matrix-rain --time 30
+
+# ヘルプとその他のオプション
+matrix-rain --help
+```
+
+> **注意**：グローバルにインストールすると、`matrix-rain`コマンドは任意のターミナルから利用できます。`node index.js`を手動で実行する必要はありません！
+
+### プロジェクトの依存関係として
+
+```bash
+# プロジェクトに追加
+npm install the-matrix-rain
+
+# または
+yarn add the-matrix-rain
+```
+
+### ソースから
+
 ```bash
 # 心を解放せよ...
 git clone https://github.com/frederico-kluser/the-matrix-rain.git
@@ -25,6 +64,30 @@ npm install
 ```
 
 ## 🕹️ 使用方法
+
+### コマンドラインオプション
+
+グローバルにインストールされている場合、次のコマンドラインオプションを使用できます：
+
+```bash
+# デフォルトの「WAKE UP NEO」メッセージで実行
+matrix-rain
+
+# カスタムメッセージで実行
+matrix-rain "FOLLOW THE WHITE RABBIT"
+
+# 特定の時間実行（秒単位）
+matrix-rain --time 30
+
+# ランダムなマトリックスの引用を表示
+matrix-rain --random
+
+# インタラクティブモード - 表示するメッセージを入力
+matrix-rain --interactive
+
+# ヘルプを表示
+matrix-rain --help
+```
 
 ### 基本的な使い方
 

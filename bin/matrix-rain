@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+// This file serves as the CLI entry point when installed globally
+require('./cli.js');

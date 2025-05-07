@@ -29,9 +29,20 @@ matrix-rain
 # Run with a custom message
 matrix-rain "FOLLOW THE WHITE RABBIT"
 
+# Show random Matrix quotes
+matrix-rain --random
+
+# Run in interactive mode
+matrix-rain --interactive
+
+# Run for a specific time (in seconds)
+matrix-rain --time 30
+
 # For help and more options
 matrix-rain --help
 ```
+
+> **Note**: After installing globally, the `matrix-rain` command will be available from any terminal. No need to run `node index.js` manually!
 
 ### As a Project Dependency
 

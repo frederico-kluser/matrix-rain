@@ -4,12 +4,13 @@
   "description": "Terminal-based Matrix digital rain animation with message display capabilities",
   "main": "index.js",
   "bin": {
-    "matrix-rain": "./bin/cli.js"
+    "matrix-rain": "./bin/matrix-rain"
   },
   "scripts": {
     "lint": "pretty-quick --staged && lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node examples/basic.js",
+    "cli": "node bin/matrix-rain",
     "example:basic": "node examples/basic.js",
     "example:custom": "node examples/custom-initial.js",
     "example:sequence": "node examples/timed-sequence.js",
@@ -18,7 +19,8 @@
     "example:module": "node examples/module-usage.js",
     "example:npm": "node examples/npm-usage.js",
     "prepublishOnly": "npm run lint",
-    "examples": "echo \"Run an example with: npm run example:[name]\" && echo \"Available examples: basic, custom, sequence, interactive, quotes, module, npm\""
+    "examples": "echo \"Run an example with: npm run example:[name]\" && echo \"Available examples: basic, custom, sequence, interactive, quotes, module, npm\"",
+    "postinstall": "echo \"\n🧠 The Matrix Rain installed! Run 'matrix-rain' to start the animation.\n\""
   },
   "repository": {
     "type": "git",

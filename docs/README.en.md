@@ -17,6 +17,45 @@ Terminal-based Matrix digital rain animation that brings the iconic "digital rai
 
 ## 💾 Installation
 
+### As a Global Command-Line Tool
+
+```bash
+# Install globally
+npm install -g the-matrix-rain
+
+# Run the Matrix rain animation
+matrix-rain
+
+# Run with a custom message
+matrix-rain "FOLLOW THE WHITE RABBIT"
+
+# Show random Matrix quotes
+matrix-rain --random
+
+# Run in interactive mode
+matrix-rain --interactive
+
+# Run for a specific time (in seconds)
+matrix-rain --time 30
+
+# For help and more options
+matrix-rain --help
+```
+
+> **Note**: After installing globally, the `matrix-rain` command will be available from any terminal. No need to run `node index.js` manually!
+
+### As a Project Dependency
+
+```bash
+# Add to your project
+npm install the-matrix-rain
+
+# OR
+yarn add the-matrix-rain
+```
+
+### From Source
+
 ```bash
 # Free your mind...
 git clone https://github.com/frederico-kluser/the-matrix-rain.git
@@ -25,6 +64,30 @@ npm install
 ```
 
 ## 🕹️ Usage
+
+### Command Line Options
+
+When installed globally, you can use the following command line options:
+
+```bash
+# Run with default "WAKE UP NEO" message
+matrix-rain
+
+# Run with custom message
+matrix-rain "FOLLOW THE WHITE RABBIT"
+
+# Run for specific time (in seconds)
+matrix-rain --time 30
+
+# Display random Matrix quotes
+matrix-rain --random
+
+# Interactive mode - type messages to display
+matrix-rain --interactive
+
+# Show help
+matrix-rain --help
+```
 
 ### Basic Usage
 
