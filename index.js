@@ -386,8 +386,8 @@ try {
   console.log("Running in non-interactive mode. Press Ctrl+C to exit.");
 }
 
-// Start the matrix animation
-const startMatrixRain = async () => {
+// Matrix rain function that returns an instance and stop function
+const matrixRain = async () => {
   // Show loader
   const loader = matrixLoader();
   await loader.start();
@@ -410,10 +410,31 @@ const startMatrixRain = async () => {
       }, 20000);
     }
   }, 1000);
+  
+  // Return the instance with display and stop functions
+  return {
+    // Display a message in the center of the screen
+    display: (message) => {
+      if (!message || typeof message !== 'string') {
+        return;
+      }
+      revealMessage(message);
+    },
+    
+    // Stop the animation
+    stop: () => {
+      if (matrixState.intervalId) {
+        clearInterval(matrixState.intervalId);
+        matrixState.intervalId = null;
+      }
+      process.stdout.write('\u001B[?25h'); // Show cursor
+      console.clear();
+    }
+  };
 };
 
-// Start the animation
-startMatrixRain();
+// Export the function instead of auto-starting
+module.exports = matrixRain;
 
 // Handle exit to restore terminal
 process.on('exit', () => {
