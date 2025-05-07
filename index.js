@@ -62,7 +62,7 @@ class Matrix {
     this.color = COLOR.TRANSPARENT;
 
     if (!this.row) {
-      this.changeLetter(2);
+      this.changeLetter(5);
     }
   }
 
@@ -94,7 +94,7 @@ class Matrix {
         }
       }
 
-      if (allColumnEmpty && getProbability(2)) {
+      if (allColumnEmpty && getProbability(10)) {
         this.changeLetter(2);
         this.intensity = 9; // Leading character is brightest
       }
@@ -248,7 +248,7 @@ const togglePause = () => {
   } else {
     // Resume
     matrixState.running = true;
-    matrixState.intervalId = setInterval(updateMatrix, 150);
+    matrixState.intervalId = setInterval(updateMatrix, 100);
   }
 };
 
@@ -317,12 +317,12 @@ const revealMessage = (message) => {
   // Replace the global updateMatrix function (using a function expression, not reassignment)
   matrixState.originalUpdateFn = originalUpdateFn;
   matrixState.intervalId = clearInterval(matrixState.intervalId);
-  matrixState.intervalId = setInterval(messageUpdate, 150);
+  matrixState.intervalId = setInterval(messageUpdate, 100);
   
   // Restore original after 5 seconds
   setTimeout(() => {
     matrixState.intervalId = clearInterval(matrixState.intervalId);
-    matrixState.intervalId = setInterval(originalUpdateFn, 150);
+    matrixState.intervalId = setInterval(originalUpdateFn, 100);
   }, 5000);
 };
 
@@ -365,7 +365,7 @@ const startMatrixRain = async () => {
   initializeMatrix();
   initializeOutput();
   
-  matrixState.intervalId = setInterval(updateMatrix, 150);
+  matrixState.intervalId = setInterval(updateMatrix, 100);
   
   // Show a welcome message after 1 second
   setTimeout(() => {
