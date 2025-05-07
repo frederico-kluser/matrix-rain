@@ -4,7 +4,7 @@
   "description": "Terminal-based Matrix digital rain animation with message display capabilities",
   "main": "index.js",
   "bin": {
-    "the-matrix-rain": "./bin/matrix-rain"
+    "the-matrix-rain": "bin/matrix-rain"
   },
   "scripts": {
     "lint": "pretty-quick --staged && lint-staged",
