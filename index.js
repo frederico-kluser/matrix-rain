@@ -438,12 +438,25 @@ const matrixRain = async (initialMessage = "WAKE UP NEO") => {
     
     // Stop the animation
     stop: () => {
+      // Clear any existing intervals
       if (matrixState.intervalId) {
         clearInterval(matrixState.intervalId);
         matrixState.intervalId = null;
       }
+      
+      // Reset state
+      matrixState.running = false;
+      
+      // Restore terminal
       process.stdout.write('\u001B[?25h'); // Show cursor
       console.clear();
+      
+      // Remove keyboard event listeners to prevent zombie processes
+      if (process.stdin.isTTY) {
+        process.stdin.setRawMode(false);
+        process.stdin.pause();
+        process.stdin.removeAllListeners('data');
+      }
     }
   };
 };
@@ -457,9 +470,17 @@ process.on('exit', () => {
   console.clear();
 });
 
-// Handle uncaught exceptions
+// Handle SIGINT (Ctrl+C) and uncaught exceptions
 process.on('SIGINT', () => {
   process.stdout.write('\u001B[?25h'); // Show cursor
   console.clear();
-  process.exit();
+  // Don't call process.exit() here - let the application handle it
+});
+
+// Handle uncaught exceptions
+process.on('uncaughtException', (error) => {
+  process.stdout.write('\u001B[?25h'); // Show cursor
+  console.clear();
+  console.error('An error occurred:', error);
+  process.exit(1);
 });
