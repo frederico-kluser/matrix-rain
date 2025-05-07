@@ -1,0 +1,37 @@
+# Development files
+.eslintrc.js
+.eslintcache
+.prettierrc
+.huskyrc
+.gitignore
+.git
+.github
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Node.js dependencies
+node_modules
+
+# Test files
+__tests__
+*.test.js
+*.spec.js
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+.DS_Store
+._.DS_Store
+Thumbs.db

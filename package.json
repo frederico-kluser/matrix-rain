@@ -1,8 +1,11 @@
 {
-  "name": "matrix-rain",
+  "name": "the-matrix-rain",
   "version": "1.0.0",
   "description": "Terminal-based Matrix digital rain animation with message display capabilities",
   "main": "index.js",
+  "bin": {
+    "matrix-rain": "./bin/cli.js"
+  },
   "scripts": {
     "lint": "pretty-quick --staged && lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,12 +15,27 @@
     "example:sequence": "node examples/timed-sequence.js",
     "example:interactive": "node examples/interactive.js",
     "example:quotes": "node examples/random-quotes.js",
-    "examples": "echo \"Run an example with: npm run example:[name]\" && echo \"Available examples: basic, custom, sequence, interactive, quotes\""
+    "example:module": "node examples/module-usage.js",
+    "example:npm": "node examples/npm-usage.js",
+    "prepublishOnly": "npm run lint",
+    "examples": "echo \"Run an example with: npm run example:[name]\" && echo \"Available examples: basic, custom, sequence, interactive, quotes, module, npm\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frederico-kluser/matrix-rain.git"
   },
+  "keywords": [
+    "matrix",
+    "terminal",
+    "animation",
+    "rain",
+    "digital-rain",
+    "cli",
+    "console",
+    "ascii-art",
+    "nodejs",
+    "javascript"
+  ],
   "author": "Frederico Guilherme Kluser de Oliveira",
   "license": "MIT",
   "bugs": {
@@ -42,5 +60,17 @@
   },
   "lint-staged": {
     "*.{ts,js}": "eslint --cache --fix"
-  }
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "index.js",
+    "bin",
+    "examples",
+    "docs",
+    "LICENSE",
+    "README.md",
+    "CONTRIBUTING.md"
+  ]
 }
