@@ -19,8 +19,8 @@ Animation de pluie numérique Matrix en terminal qui reproduit l'emblématique e
 
 ```bash
 # Libérez votre esprit...
-git clone https://github.com/frederico-kluser/matrix-rain.git
-cd matrix-rain
+git clone https://github.com/frederico-kluser/the-matrix-rain.git
+cd the-matrix-rain
 npm install
 ```
 
@@ -31,7 +31,7 @@ npm install
 La fonction `matrixRain` renvoie une Promise, elle doit donc être utilisée avec async/await ou des chaînes de Promise :
 
 ```javascript
-const matrixRain = require('./index');
+const matrixRain = require('the-matrix-rain');
 
 // Exemple avec async/await (Il n'y a pas de cuillère)
 async function startMatrix() {

@@ -5,9 +5,9 @@ const matrixRain = require('../index');
 // Define command line arguments
 const args = process.argv.slice(2);
 const HELP_MESSAGE = `
-🧠 Matrix Rain 🌧️ - Terminal-based Matrix digital rain animation
+🧠 The Matrix Rain 🌧️ - Terminal-based Matrix digital rain animation
 
-Usage: matrix-rain [options] [message]
+Usage: matrix-rain [options] [message]  # Command stays the same for user experience
 
 Options:
   -h, --help              Display this help message

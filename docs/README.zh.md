@@ -19,8 +19,8 @@
 
 ```bash
 # 释放你的思想...
-git clone https://github.com/frederico-kluser/matrix-rain.git
-cd matrix-rain
+git clone https://github.com/frederico-kluser/the-matrix-rain.git
+cd the-matrix-rain
 npm install
 ```
 
@@ -31,7 +31,7 @@ npm install
 `matrixRain`函数返回一个Promise，所以必须使用async/await或Promise链：
 
 ```javascript
-const matrixRain = require('./index');
+const matrixRain = require('the-matrix-rain');
 
 // 使用async/await的示例（没有勺子）
 async function startMatrix() {

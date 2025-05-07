@@ -1,14 +1,14 @@
-# Contributing to Matrix Rain
+# Contributing to The Matrix Rain
 
-Thank you for your interest in contributing to the Matrix Rain project! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to The Matrix Rain project! This document provides guidelines and instructions for contributing.
 
 ## 🌟 Getting Started
 
 1. **Fork the repository** on GitHub.
 2. **Clone your fork** locally:
    ```
-   git clone https://github.com/YOUR-USERNAME/matrix-rain.git
-   cd matrix-rain
+   git clone https://github.com/YOUR-USERNAME/the-matrix-rain.git
+   cd the-matrix-rain
    ```
 3. **Install dependencies**:
    ```
@@ -78,4 +78,4 @@ Currently, this project lacks formal tests. Contributions adding unit tests or i
 
 ## 📜 License
 
-By contributing to Matrix Rain, you agree that your contributions will be licensed under the project's MIT License.
+By contributing to The Matrix Rain, you agree that your contributions will be licensed under the project's MIT License.

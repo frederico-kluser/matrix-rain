@@ -19,8 +19,8 @@
 
 ```bash
 # अपने दिमाग को मुक्त करें...
-git clone https://github.com/frederico-kluser/matrix-rain.git
-cd matrix-rain
+git clone https://github.com/frederico-kluser/the-matrix-rain.git
+cd the-matrix-rain
 npm install
 ```
 
@@ -31,7 +31,7 @@ npm install
 `matrixRain` फंक्शन एक Promise लौटाता है, इसलिए इसे async/await या Promise चेन के साथ उपयोग किया जाना चाहिए:
 
 ```javascript
-const matrixRain = require('./index');
+const matrixRain = require('the-matrix-rain');
 
 // async/await के साथ उदाहरण (कोई चम्मच नहीं है)
 async function startMatrix() {

@@ -1,4 +1,4 @@
-// Simple runner script for matrix-rain index.js module
+// Simple runner script for the-matrix-rain index.js module
 
 // Import the matrix rain function
 const matrixRain = require('./index');

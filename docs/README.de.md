@@ -19,8 +19,8 @@ Terminalbasierte Matrix-Digitalregen-Animation, die den ikonischen "Digitalregen
 
 ```bash
 # Befreie deinen Geist...
-git clone https://github.com/frederico-kluser/matrix-rain.git
-cd matrix-rain
+git clone https://github.com/frederico-kluser/the-matrix-rain.git
+cd the-matrix-rain
 npm install
 ```
 
@@ -31,7 +31,7 @@ npm install
 Die Funktion `matrixRain` gibt ein Promise zurück, daher muss sie mit async/await oder Promise-Ketten verwendet werden:
 
 ```javascript
-const matrixRain = require('./index');
+const matrixRain = require('the-matrix-rain');
 
 // Beispiel mit async/await (Es gibt keinen Löffel)
 async function startMatrix() {

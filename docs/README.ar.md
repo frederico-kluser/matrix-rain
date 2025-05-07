@@ -19,8 +19,8 @@
 
 ```bash
 # حرر عقلك...
-git clone https://github.com/frederico-kluser/matrix-rain.git
-cd matrix-rain
+git clone https://github.com/frederico-kluser/the-matrix-rain.git
+cd the-matrix-rain
 npm install
 ```
 
@@ -31,7 +31,7 @@ npm install
 تُرجع دالة `matrixRain` وعداً (Promise)، لذا يجب استخدامها مع async/await أو سلاسل الوعود:
 
 ```javascript
-const matrixRain = require('./index');
+const matrixRain = require('the-matrix-rain');
 
 // مثال باستخدام async/await (لا توجد ملعقة)
 async function startMatrix() {

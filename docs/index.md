@@ -23,8 +23,8 @@ Choose your preferred language:
 
 ```bash
 # Clone the repository
-git clone https://github.com/frederico-kluser/matrix-rain.git
-cd matrix-rain
+git clone https://github.com/frederico-kluser/the-matrix-rain.git
+cd the-matrix-rain
 npm install
 
 # Run the basic example
