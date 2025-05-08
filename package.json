@@ -1,6 +1,6 @@
 {
   "name": "the-matrix-rain",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Terminal-based Matrix digital rain animation with message display capabilities",
   "main": "index.js",
   "bin": {

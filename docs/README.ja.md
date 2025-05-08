@@ -1,10 +1,17 @@
 # 🧠 マトリックスレイン 🌧️
 
-> *「残念ながら、マトリックスが何かを説明することはできない。自分自身で見るしかないのだ。」* - モーフィアス
+![Matrix Rain Demo](../demo.gif)
 
-マトリックス映画からの象徴的な「デジタルレイン」効果をターミナルに直接再現するターミナルベースのマトリックスデジタルレインアニメーション。赤い錠剤 💊 を選び、ウサギの穴がどれだけ深いか確かめてみましょう...
+> _「残念ながら、マトリックスが何かを説明することはできない。自分自身で見るしかないのだ。」_ - モー
+> フィアス
 
-*他の言語で読む: [English](README.en.md), [Português](README.pt-br.md), [Español](README.es.md), [Français](README.fr.md), [Deutsch](README.de.md), [中文](README.zh.md), [日本語](README.ja.md), [Русский](README.ru.md), [العربية](README.ar.md), [हिन्दी](README.hi.md)*
+マトリックス映画からの象徴的な「デジタルレイン」効果をターミナルに直接再現するターミナルベースのマト
+リックスデジタルレインアニメーション。赤い錠剤 💊 を選び、ウサギの穴がどれだけ深いか確かめてみましょ
+う...
+
+_他の言語で読む: [English](README.en.md), [Português](README.pt-br.md), [Español](README.es.md),
+[Français](README.fr.md), [Deutsch](README.de.md), [中文](README.zh.md), [日本語](README.ja.md),
+[Русский](README.ru.md), [العربية](README.ar.md), [हिन्दी](README.hi.md)_
 
 ## ✨ 特徴
 
@@ -12,7 +19,7 @@
 - 💬 中央揃えのメッセージ表示（「THE MATRIX HAS YOU」）
 - ⏯️ スペースバーでの一時停止/再開（マトリックスで時間を凍結）
 - 📝 カスタム初期メッセージのサポート（自分自身のオラクルになる）
-- 🔄 タイムドシーケンスやインタラクティブディスプレイを作成するためのメッセージ表示API
+- 🔄 タイムドシーケンスやインタラクティブディスプレイを作成するためのメッセージ表示 API
 - 🐇 インタラクティブコントロールで白いウサギを追う
 
 ## 💾 インストール
@@ -42,7 +49,8 @@ matrix-rain --time 30
 matrix-rain --help
 ```
 
-> **注意**：グローバルにインストールすると、`matrix-rain`コマンドは任意のターミナルから利用できます。`node index.js`を手動で実行する必要はありません！
+> **注意**：グローバルにインストールすると、`matrix-rain`コマンドは任意のターミナルから利用できます
+> 。`node index.js`を手動で実行する必要はありません！
 
 ### プロジェクトの依存関係として
 
@@ -91,7 +99,7 @@ matrix-rain --help
 
 ### 基本的な使い方
 
-`matrixRain`関数はPromiseを返すため、async/awaitまたはPromiseチェーンで使用する必要があります：
+`matrixRain`関数は Promise を返すため、async/await または Promise チェーンで使用する必要があります：
 
 ```javascript
 const matrixRain = require('the-matrix-rain');
@@ -99,10 +107,10 @@ const matrixRain = require('the-matrix-rain');
 // async/awaitを使った例（スプーンなどない）
 async function startMatrix() {
   // デフォルトの「WAKE UP NEO」メッセージまたはカスタムメッセージで開始
-  const matrix = await matrixRain();  // または await matrixRain("カスタムメッセージ");
+  const matrix = await matrixRain(); // または await matrixRain("カスタムメッセージ");
 
   // カスタムメッセージを表示
-  matrix.display("THE MATRIX HAS YOU");
+  matrix.display('THE MATRIX HAS YOU');
 
   // 終了時にアニメーションを停止（構築物から出る）
   matrix.stop();
@@ -113,16 +121,16 @@ startMatrix();
 
 // Promiseの構文を使った代替方法（覚えておいて...私が提供するのは真実だけだ）
 matrixRain().then(matrix => {
-  matrix.display("THE MATRIX HAS YOU");
-  
+  matrix.display('THE MATRIX HAS YOU');
+
   // 後でアニメーションを停止
   setTimeout(() => matrix.stop(), 5000);
 });
 ```
 
-### NPMスクリプト
+### NPM スクリプト
 
-プロジェクトには例を実行するためのいくつかのnpmスクリプトが含まれています：
+プロジェクトには例を実行するためのいくつかの npm スクリプトが含まれています：
 
 ```bash
 # 基本的な例を実行（青い錠剤オプション）
@@ -146,8 +154,8 @@ npm run examples
 
 ## 🧪 例
 
-`/examples`ディレクトリには、Matrix Rainアニメーションを使用するさまざまな方法を示すデモが含まれています。
-上記のnpmスクリプトを使用してこれらの例を実行できます。
+`/examples`ディレクトリには、Matrix Rain アニメーションを使用するさまざまな方法を示すデモが含まれて
+います。上記の npm スクリプトを使用してこれらの例を実行できます。
 
 - `examples/basic.js` - デフォルトの初期メッセージを持つ単純な例
 - `examples/custom-initial.js` - カスタム初期メッセージの例（自分自身の赤い錠剤を選ぶように）
@@ -155,7 +163,7 @@ npm run examples
 - `examples/interactive.js` - 実行中に表示するメッセージを入力（選ばれし者になる）
 - `examples/random-quotes.js` - マトリックス映画からのランダムな引用を表示（ザイオンの知恵）
 
-各例はMatrix Rainアニメーションのさまざまな機能を示しています。例を直接実行するには：
+各例は Matrix Rain アニメーションのさまざまな機能を示しています。例を直接実行するには：
 
 ```bash
 node examples/interactive.js
@@ -165,10 +173,10 @@ node examples/interactive.js
 
 ### matrixRain([initialMessage])
 
-Matrixレインアニメーションを開始します。
+Matrix レインアニメーションを開始します。
 
 - `initialMessage`（オプション）：最初に表示するカスタムメッセージ（デフォルト：「WAKE UP NEO」）
-- 戻り値：`display`および`stop`メソッドを持つオブジェクトに解決するPromise
+- 戻り値：`display`および`stop`メソッドを持つオブジェクトに解決する Promise
 
 ### matrix.display(message)
 
@@ -192,4 +200,4 @@ MIT
 
 ---
 
-> *「カンフーを知っている。」* - ネオ
+> _「カンフーを知っている。」_ - ネオ

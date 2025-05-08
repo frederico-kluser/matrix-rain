@@ -1,10 +1,17 @@
 # 🧠 Matrix Rain 🌧️
 
-> *"Unfortunately, no one can be told what the Matrix is. You have to see it for yourself."* - Morpheus
+![Matrix Rain Demo](../demo.gif)
 
-Terminal-based Matrix digital rain animation that brings the iconic "digital rain" effect from The Matrix films directly to your terminal. Choose the red pill 💊 and see how deep the rabbit hole goes...
+> _"Unfortunately, no one can be told what the Matrix is. You have to see it for yourself."_ -
+> Morpheus
 
-*Read this in other languages: [English](README.en.md), [Português](README.pt-br.md), [Español](README.es.md), [Français](README.fr.md), [Deutsch](README.de.md), [中文](README.zh.md), [日本語](README.ja.md), [Русский](README.ru.md), [العربية](README.ar.md), [हिन्दी](README.hi.md)*
+Terminal-based Matrix digital rain animation that brings the iconic "digital rain" effect from The
+Matrix films directly to your terminal. Choose the red pill 💊 and see how deep the rabbit hole
+goes...
+
+_Read this in other languages: [English](README.en.md), [Português](README.pt-br.md),
+[Español](README.es.md), [Français](README.fr.md), [Deutsch](README.de.md), [中文](README.zh.md),
+[日本語](README.ja.md), [Русский](README.ru.md), [العربية](README.ar.md), [हिन्दी](README.hi.md)_
 
 ## ✨ Features
 
@@ -42,7 +49,8 @@ matrix-rain --time 30
 matrix-rain --help
 ```
 
-> **Note**: After installing globally, the `matrix-rain` command will be available from any terminal. No need to run `node index.js` manually!
+> **Note**: After installing globally, the `matrix-rain` command will be available from any
+> terminal. No need to run `node index.js` manually!
 
 ### As a Project Dependency
 
@@ -99,10 +107,10 @@ const matrixRain = require('the-matrix-rain');
 // Example with async/await (There is no spoon)
 async function startMatrix() {
   // Start with default "WAKE UP NEO" message or custom message
-  const matrix = await matrixRain();  // or await matrixRain("CUSTOM MESSAGE");
+  const matrix = await matrixRain(); // or await matrixRain("CUSTOM MESSAGE");
 
   // Display a custom message
-  matrix.display("THE MATRIX HAS YOU");
+  matrix.display('THE MATRIX HAS YOU');
 
   // Stop the animation when done (exit the construct)
   matrix.stop();
@@ -113,8 +121,8 @@ startMatrix();
 
 // Alternative using Promise syntax (Remember... all I'm offering is the truth)
 matrixRain().then(matrix => {
-  matrix.display("THE MATRIX HAS YOU");
-  
+  matrix.display('THE MATRIX HAS YOU');
+
   // Later, stop the animation
   setTimeout(() => matrix.stop(), 5000);
 });
@@ -146,8 +154,8 @@ npm run examples
 
 ## 🧪 Examples
 
-The `/examples` directory contains various demos showing different ways to use the Matrix Rain animation. 
-You can run these examples using the npm scripts listed above.
+The `/examples` directory contains various demos showing different ways to use the Matrix Rain
+animation. You can run these examples using the npm scripts listed above.
 
 - `examples/basic.js` - Simple example with default initial message
 - `examples/custom-initial.js` - Custom initial message example (like choosing your own red pill)
@@ -155,7 +163,8 @@ You can run these examples using the npm scripts listed above.
 - `examples/interactive.js` - Type messages to display while running (be the One)
 - `examples/random-quotes.js` - Shows random Matrix movie quotes (wisdom from Zion)
 
-Each example demonstrates different features of the Matrix Rain animation. To run an example directly:
+Each example demonstrates different features of the Matrix Rain animation. To run an example
+directly:
 
 ```bash
 node examples/interactive.js
@@ -192,4 +201,4 @@ MIT
 
 ---
 
-> *"I know kung fu."* - Neo
+> _"I know kung fu."_ - Neo
